@@ -12,7 +12,7 @@ const resolvers = {
 
         Mutation: {
 
-            addMovieRecord: async(_, args) => {
+            addMovie: async(_, args) => {
 
                 const newMovie = new Movie(args)
                 await newMovie.save()
@@ -20,13 +20,13 @@ const resolvers = {
 
             },
 
-            updateMovieRecord: async (_, { id, ...updates }) => {
+            updateMovie: async (_, { id, ...updates }) => {
 
                 return await Movie.findByIdAndUpdate(id, updates, { new: true})
 
             },
 
-            deleteMovieRecord: async (_, { id }) => {
+            deleteMovie: async (_, { id }) => {
 
                 return await Movie.findByIdAndDelete(id)
 

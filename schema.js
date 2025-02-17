@@ -22,7 +22,7 @@ const typeDefs = gql`
     
     type Mutation {
 
-        addMovieRecord(
+        addMovie(
         name: String!, 
         director_name: String!, 
         production_house: String!,
@@ -30,7 +30,7 @@ const typeDefs = gql`
         rating: Float!
         ): Movie
 
-        updateMovieRecord(
+        updateMovie(
         id: ID!,
         name: String,
         director_name: String,
@@ -39,7 +39,7 @@ const typeDefs = gql`
         rating: Float!
         ): Movie
 
-        deleteMovieRecord(id: ID!): Movie
+        deleteMovie(id: ID!): Movie
 
     }
     
