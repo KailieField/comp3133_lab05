@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-const movieSchema = gql`
+const typeDefs = gql`
 
     type Movie {
 
@@ -22,7 +22,7 @@ const movieSchema = gql`
     
     type Mutation {
 
-        addMovie(
+        addMovieRecord(
         name: String!, 
         director_name: String!, 
         production_house: String!,
@@ -30,7 +30,7 @@ const movieSchema = gql`
         rating: Float!
         ): Movie
 
-        updateMovie(
+        updateMovieRecord(
         id: ID!,
         name: String,
         director_name: String,
@@ -39,11 +39,11 @@ const movieSchema = gql`
         rating: Float!
         ): Movie
 
-        deleteMovie(id: ID!): Movie
+        deleteMovieRecord(id: ID!): Movie
 
     }
     
 
 `;
 
-module.exports = movieSchema;
+module.exports = typeDefs;
